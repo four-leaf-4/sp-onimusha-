@@ -1,0 +1,949 @@
+@charset "utf-8";
+/*common*/
+html,body{font-size:16px;font-family:"Sawarabi Mincho",serif;}
+@media screen and (max-width:320px){html,body{font-size:14px;}}
+@media screen and (min-width:427px) and (min-width:768px){html,body{font-size: 18px;}}
+@media screen and (min-width:769px){html,body{font-size: 20px;}}
+body{
+	background-color: #fff;
+	height: auto;
+	counter-reset:num_item_list;
+	}
+header,footer{
+    padding: 5px 15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	}
+header{
+	top:0;
+	position:absolute;
+	z-index: 10;
+	}
+footer{
+	bottom: 0;
+	position:relative;
+	background: #000;
+	}
+header ul,footer ul{
+	list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+	align-items: start;
+    max-width:100%;
+    width: 100%;
+    margin: 0 auto;
+	}
+header ul a,footer ul a{
+	display: block;
+	}
+header ul .logo_ecap,footer ul .logo_ecap{
+	max-width:6rem;
+	width:100%;
+	}
+ul .logo_ecap_yahoo {
+    max-width: 15rem;
+    width: 100%;
+}
+header ul .logo_ecap,footer ul .logo_ecap_rakuten{
+	max-width:10rem;
+	width:100%;
+	}
+@media screen and (max-width:426px){header ul .logo_ecap{max-width:6rem;}}
+header .logo_ps4,header .logo_ns{
+	max-width:5rem;
+	width:100%;
+	margin:0 1rem 0 0;
+	}
+header ul .btn_twshare{
+	width:22px;
+	height:22px;
+	}
+header ul .logo_left{
+	display: flex;
+	flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+	}
+@media screen and (max-width:768px){header ul .logo_left{flex-wrap: wrap;}}
+header ul .logo_left .update{margin: 0 0 0 8px;}
+header ul .logo_left .update .anchor{
+	display: block;
+    background: rgba(210, 0, 9, 0.3);
+    color: #fff;
+    padding: 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+	}
+@media screen and (max-width:768px){header ul .logo_left .update .anchor{font-size: 0.7rem;}}
+@media screen and (max-width:426px){header ul .logo_left .update .anchor{font-size: 0.5rem;}}
+header ul .logo_left .update .anchor .arrow{color: #ffff00;}
+header .logos_right{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+	}
+footer .trademark_ps4{
+	font-size: 0.8rem;
+    color: #999;
+    text-align: right;
+    margin: 1rem 0;
+	}
+footer .copyright{
+	font-family: sans-serif;
+	color: #fff;
+	font-size: 0.7rem;
+	}
+@media screen and (max-width:426px){
+	footer .copyright{
+		font-size: 0.5rem;
+		width: 50%;
+		}
+	}
+footer .copyright .production{
+    display: block;
+    line-height:1.4;
+    padding:0.5rem 0;
+	}
+div img,figure img{
+	display: block;
+    width: 100%;
+	}
+span.sup{
+	font-size: 0.5em;
+    vertical-align: super;
+	}
+h2{
+    width: 100%;
+    margin: 0 auto 4rem;
+	box-sizing: border-box;	
+	}
+h2:after{
+	position: relative;
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(148,125,55,1.00) 20%,rgba(148,125,55,1.00) 80%,rgba(255,255,255,0) 100%);
+	}
+.lineup,.about_complete,.about_bracelet,.about_shikishi,.about_genmabako{padding: 6rem 1rem;}
+@media screen and (max-width:426px){.lineup,.about_bracelet,.about_shikishi,.about_genmabako{padding:4rem 1rem;}}
+.lineup h2{max-width: 400px;}
+@media screen and (max-width:426px){.lineup h2{max-width: 300px;}}
+.about_complete h2{max-width:600px;}
+.about_bracelet h2{max-width:600px;}
+.about_shikishi h2{max-width:400px;}
+@media screen and (max-width:426px){.about_shikishi h2{max-width:300px;}}
+.about_genmabako h2{max-width:600px;}
+/*keyvisual*/
+.keyvisual{
+	display: flex;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/keyvisual.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.keyvisual .area_abusolute{
+	position:relative;
+	max-width:1920px;
+	width:100%;
+    height:100%;
+	max-height:1080px;
+	margin:auto;
+	box-sizing: border-box;
+	}
+.keyvisual .pic_intro_complete{
+	max-width:60%;
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    left: 1vw;
+	padding: 1rem;
+    box-sizing: border-box;
+	}
+.keyvisual .logotitle_tate{
+	max-width: 25%;
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    right: 1vw;
+    padding: 0 1rem;
+    box-sizing: border-box;
+	}
+.keyvisual .catchcopy{
+    /* width: 100%; */
+    /* max-width: 1200px; */
+    position: absolute;
+    top: 5vh;
+    left: 1vw;
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1.4;
+    font-weight: 900;
+    text-shadow: 0 0 5px red;
+    box-sizing: border-box;
+	}
+.keyvisual .reserve_nowon_tate{
+    position: absolute;
+    max-width: 10%;
+    width: 100%;
+    bottom: 2vh;
+    right: 22%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+	}
+.keyvisual .date_onsales_tate{
+	max-width:4%;
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    right: 30%;
+    margin: auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+@media screen and (max-width:1440px){
+	.keyvisual .catchcopy{
+		font-size:1.0rem;
+		}
+	.keyvisual .logotitle_tate{}
+	.keyvisual .pic_intro_complete{max-width: 55%;}
+	.keyvisual .reserve_nowon_tate{}
+	.keyvisual .date_onsales_tate{max-width: 4.5vw;}
+	}
+.keyvisual .logotitle_yoko{
+	position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+	box-sizing: border-box;
+    width: 100%;
+	}
+.keyvisual .date_onsales_yoko{
+	position: absolute;
+    bottom: 16vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    width: 100%;
+	padding: 0 1rem;
+    box-sizing: border-box;
+	}
+.keyvisual .reserve_nowon_yoko{
+	max-width: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 20vh;
+	}
+@media screen and (min-width:1025px){
+	.keyvisual .logotitle_yoko{display:none;}
+	.keyvisual .date_onsales_yoko{display:none;}
+	.keyvisual .reserve_nowon_yoko{display:none;}
+	}
+@media screen and (max-width:1024px){
+	.keyvisual .logotitle_tate{display:none;}
+	.keyvisual .date_onsales_tate{display:none;}
+	.keyvisual .reserve_nowon_tate{display:none;}
+	}
+@media screen and (max-width:1280px){
+	.keyvisual .pic_intro_complete{max-width:45%;}
+	.keyvisual .catchcopy{top:10vh;}
+	.keyvisual .logotitle_yoko,.keyvisual .date_onsales_yoko,.keyvisual .reserve_nowon_yoko{max-width:300px;}
+	}
+@media screen and (max-width:1024px){
+	.keyvisual .date_onsales{
+		right: 33vw;
+		bottom: 3vh;
+		}
+	.keyvisual .logotitle{
+		max-width:250px;
+	}
+	.keyvisual .pic_intro_complete{
+		left: 0;
+		right: 0;
+		bottom: 30vh;
+		margin: auto;
+		max-width: 650px;
+		width:100%;
+	}
+	.keyvisual .catchcopy{
+		font-size:1.6rem;
+		top:0vh;
+		text-align: center;
+		left: 0;
+		right: 0;
+		margin: auto;
+		}
+	}
+@media screen and (max-width:768px){
+	.keyvisual .catchcopy{
+		font-size:1.2rem;
+		top:8vh;
+		}
+	.keyvisual .logotitle_yoko{
+		max-width:300px;
+		}
+	.keyvisual .reserve_nowon_yoko{
+		max-width:300px;
+		}
+	}
+@media screen and (max-width:426px){
+	.keyvisual .logotitle_yoko{
+		max-width:200px;
+		}
+	.keyvisual .pic_intro_complete{
+		bottom: 35vh;
+		}
+	.keyvisual .reserve_nowon_yoko{
+		max-width:150px;		
+		bottom:25vh;
+		}
+	.keyvisual .reserve_nowon{
+      max-width: 350px;
+      bottom: 6vh;
+      left: 0vw;
+      right: 0vw;
+      margin: auto;
+	  top:auto;
+		}
+	.keyvisual .date_onsales_yoko {
+		bottom: 20vh;
+		max-width:250px;
+		}
+	.keyvisual .catchcopy{
+		width: 100%;
+		max-width: 800px;
+		box-sizing: border-box;
+		padding:0 1rem;
+		font-size: 1.0rem;
+		text-align: center;
+		top: 10vh;
+		}
+	}
+@media screen and (max-width:375px){.keyvisual .catchcopy{font-size:0.7rem;}}
+@media screen and (max-width:320px){
+	.keyvisual .catchcopy{
+		font-size:0.6rem;
+		}
+	.keyvisual .pic_intro_complete {
+		bottom: 40vh;
+	}
+	.keyvisual .reserve_nowon_yoko {
+		bottom: 30vh;
+	}
+	.keyvisual .logotitle{
+		top:7vh;
+		}
+	.keyvisual .logotitle_yoko{
+		max-width: 200px;
+		}
+	}
+/*content*/
+.bg_smoke{
+    background-image:url(../img/bg_dott.png),url(../img/bg_smoke.png);
+	background-color: rgba(20, 20, 20, 1.0);
+    background-size: 5px,cover;
+    background-position: center,top center;
+    background-repeat: repeat,no-repeat;
+	overflow: auto;
+    height: auto;
+	}
+.about_complete .txt_complete{
+	text-align:center;
+	margin: 0 0 4rem 0;
+	line-height: 1.4;
+	font-size:1.4rem;
+	color:#fff;
+	}
+@media screen and (max-width:426px){
+	.about_complete .txt_complete{
+		font-size:1.2rem;
+		}
+	}
+.about_complete .pic_complete{
+	max-width: 1000px;
+    width: 100%;
+    margin: auto;
+	}
+/*lineup table*/
+.lineup{
+	position: relative;
+	overflow: hidden;
+	box-sizing:border-box;
+	}
+.lineup div[class^="line_up_bg_charactor_"]{
+	position: absolute;
+	width:100%;
+}
+.lineup div[class="line_up_bg_charactor_kaede"]{
+	max-width:30%;
+	top:10vh;
+	right:0;
+	}
+.lineup div[class="line_up_bg_charactor_samanosuke"]{
+	max-width:25%;
+	top: 10vh;
+	left:0;
+	}
+@media screen and (max-width:1024px){
+	.lineup div[class="line_up_bg_charactor_kaede"]{
+		top:15vh;
+		right: -20vw;
+		}
+	.lineup div[class="line_up_bg_charactor_samanosuke"]{
+		bottom:auto;
+		top:15vh;
+		left: -5vw;
+		}
+	}
+@media screen and (max-width:768px){
+	.lineup div[class="line_up_bg_charactor_kaede"]{
+		max-width:400px;
+		top:20vh;
+		}
+	.lineup div[class="line_up_bg_charactor_samanosuke"]{
+		max-width: 350px;
+		top: 20vh;
+		left: -10vw;
+		}
+	}
+@media screen and (max-width:426px){
+	.lineup div[class="line_up_bg_charactor_kaede"]{
+		top:25vh;
+		max-width:350px;
+		right:-55vw;
+		}
+	.lineup div[class="line_up_bg_charactor_samanosuke"]{
+		max-width:250px;
+		top:25vh;
+		left:-25vw;
+		}
+	}
+@media screen and (max-width:320px){
+	.lineup div[class="line_up_bg_charactor_kaede"]{
+		max-width:200px;
+		right: -25vw;
+		}
+	.lineup div[class="line_up_bg_charactor_samanosuke"]{
+		max-width:150px;
+		left: -10vw;
+		}	
+	}
+.lineup .bg_white{
+	position: relative;
+	z-index: 2;
+	background-image:url(../img/bg_dott.png);
+	background-size:2px;
+	background-position: center;
+	background-repeat: repeat; 
+    max-width: 1800px;
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+    box-sizing: border-box;
+	}
+@media screen and (max-width:426px){.lineup .bg_white{padding: 0.5rem;}}
+.bg_lineup_table{
+    box-sizing: border-box;
+    overflow-x: scroll;
+    /* max-width: 1200px; */
+    width: 100%;
+    /* margin: 1rem auto 0; */
+    /* background: rgba(0, 0, 0, 0.8); */
+}
+.hard_select{
+	list-style:none;
+	display:flex;
+	flex-direction:row;
+  justify-content:center;
+  max-width: 1200px;
+  width: 100%;
+  margin:0 auto;
+  padding:0;
+  }
+.hard_select li{
+	max-width:300px;
+	width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1rem 4rem;
+	}
+@media screen and (max-width:426px){.hard_select li{padding: 1rem 2rem;}}
+.hard_select li.tab_ns{background:rgba(230, 0, 18, 0.8);margin: 0 5px 0 0;}
+.hard_select li.tab_ps4{background:#1f1f1f;margin: 0 0 0 5px;}
+.hard_select li.select{border:2px solid rgb(255, 215, 0);}
+.bg_lineup_table .content{
+	width:100%;
+	margin:1rem auto;
+	}
+.bg_lineup_table .content table[class^="table_hard_"]{
+	width:1600px;
+    margin:auto;
+    table-layout:fixed;
+	padding:1rem;
+    border-collapse:separate;
+    border-spacing:1px;
+	background:rgba(31, 31, 31, 0.6);
+	}
+@media screen and (max-width:426px){.bg_lineup_table .content table[class^="table_hard_"]{width:800px;}}
+.bg_lineup_table .content table[class="table_hard_ns"]{}
+.bg_lineup_table .content table[class="table_hard_ps4"]{}
+.bg_lineup_table .content table[class^="table_hard_"] .col_complete{}
+.bg_lineup_table .content table[class^="table_hard_"] .col_limited{}
+.bg_lineup_table .content table[class^="table_hard_"] .col_genmabako{}
+.bg_lineup_table .content table[class^="table_hard_"] .col_softonly{}
+.bg_lineup_table .content table[class^="table_hard_"] thead{
+  width:100%;
+}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr{
+	width:100%;
+    vertical-align: middle;
+    text-align: center;
+}
+.bg_lineup_table .content table[class^="table_hard_"] tr:nth-of-type(odd){background:rgba(13, 13, 13, 0.6);}
+.bg_lineup_table .content table[class^="table_hard_"] tr:nth-of-type(even){background:rgba(38, 38, 38, 0.6);}
+.bg_lineup_table .content table[class^="table_hard_"] tr.hardware:first-child{background:none;}
+.bg_lineup_table .content table[class^="table_hard_"] tr.edition:first-child td{width:200px;}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.pic_item{background:rgba(206, 206, 206, 0.6);}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.edition th{
+	background:rgba(140, 20, 25, 0.6);
+    color: #fff;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.pic_item td{padding:0.5rem;}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.table_price{
+	font-size:1.6rem;
+	color:#fff;
+	height:4rem;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.table_price td{
+	vertical-align: middle;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.table_price td:after{
+	content:"円";
+	font-size:0.5em;
+	color:#cccccc;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve{
+	height:4rem;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve td{
+	vertical-align:middle;
+	height: 4rem;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve td a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    background: linear-gradient(45deg,#339933 0%,#00e600 100%);
+    background-size: 600%;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.6rem;
+    text-shadow: 0 0 5px #222;
+    animation: btn_reserve_anime infinite 3s;
+    border-radius: 10px;
+    box-shadow: 0 5px 0px 0 #1b651c;
+	transform: translateY(-5px);
+	transition:all 0.3s;
+	}
+@media screen and (max-width:426px){
+	.bg_lineup_table .content table[class^="table_hard_"] tr.edition:first-child td{width:150px;}
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr.table_price{height:2rem;font-size: 1.2rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr.edition th{font-size:0.5rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve{height:2rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve td{height:2rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve td a{font-size:1.0rem;}
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve td a:hover{
+    box-shadow: 0 0px 0px 0 #1b651c;
+	transform: translateY(0px);
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr.btn_reserve td:nth-of-type(odd) a{
+	animation-delay:1.5s;
+	}
+@keyframes btn_reserve_anime{
+	0%{background-position: left;}
+	50%{background-position:right;}
+	100%{background-position: left;}
+	}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr th{
+    line-height: 1.4;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 0.8rem;
+	color: #fff;
+}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr th[class^="hardware_"]{font-size:1.5rem;}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr th.hardware_ns{
+  background:rgba(230, 0, 18, 0.8);
+}
+.bg_lineup_table .content table[class^="table_hard_"] thead tr th.hardware_ps4{
+  background:rgba(31, 31, 31, 0.8);
+}
+.bg_lineup_table .content table[class^="table_hard_"] tbody tr{
+	height:4rem;
+	}
+.bg_lineup_table .content table[class^="table_hard_"] tbody th{
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 0.8rem;
+	line-height: 1.1;
+	}
+@media screen and (max-width:426px){
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr th[class^="hardware_"]{font-size:1.0rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] thead tr th{font-size:0.5rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] tbody th{font-size:0.5rem;}
+	.bg_lineup_table .content table[class^="table_hard_"] tbody tr{height:2rem;}
+	}
+.bg_lineup_table .content table[class^="table_hard_"] tbody tr th{
+  word-wrap:break-word;
+  box-sizing:border-box;
+  color:#fff;
+}
+.bg_lineup_table .content table[class^="table_hard_"] tbody tr:nth-of-type(odd){}
+.bg_lineup_table .content table[class^="table_hard_"] tbody tr:nth-of-type(even){}
+.bg_lineup_table .content table[class^="table_hard_"] tbody tr td{
+  color:rgba(148,125,55,1.00);
+  text-align:center;
+  vertical-align: middle;
+}
+.bg_lineup_table .content table[class^="table_hard_"] tbody tr td.triangle{color: #f7f7d1;}
+.lineup .note_triangle{
+	font-size:0.8rem;
+	line-height:1.4;
+    padding:1rem 0 0 2rem;
+    color: #fff;
+	}
+.lineup .note_triangle span{
+	color:#f7f7d1;
+	}
+.lineup .note_triangle span:after{
+	content:"：";
+	color:#222;
+	}
+/*bracelet*/
+.about_bracelet{}
+.about_bracelet .about_bracelet_content,
+.about_shikishi .about_shikishi_content,
+.about_genmabako .about_genmabako_content{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+	flex-wrap: wrap;
+	max-width: 1500px;
+    width: 100%;
+    margin: 4rem auto;
+	}
+.about_shikishi .about_shikishi_content{flex-direction:row-reverse;}
+.about_bracelet .about_bracelet_content .bracelet_pic,
+.about_shikishi .about_shikishi_content .shikishi_pic{
+	max-width:600px;
+	width:100%;
+	}
+@media screen and (max-width:426px){
+	.about_bracelet .about_bracelet_content .bracelet_pic,
+	.about_shikishi .about_shikishi_content .shikishi_pic{
+		margin: 0 0 2rem 0;
+		}
+		}
+.about_bracelet .about_bracelet_content .bracelet_txt,
+.about_shikishi .about_shikishi_content .shikishi_txt{
+	max-width:800px;
+	width:100%;
+	color:#fff;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt h3,
+.about_shikishi .about_shikishi_content .shikishi_txt h3{
+	font-size:1.6rem;
+	line-height: 1.4;
+	text-shadow:0 0 10px #222;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt h3:first-letter,
+.about_shikishi .about_shikishi_content .shikishi_txt h3:first-letter{
+	font-size:1.5em;
+	color:#c80008;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt p,
+.about_shikishi .about_shikishi_content .shikishi_txt p,
+.about_genmabako .about_genmabako_content .genmabako_txt{
+	text-shadow:0 0 5px #222;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt p,
+.about_shikishi .about_shikishi_content .shikishi_txt p{
+	font-size:1.2rem;
+    line-height:1.4;
+	padding: 1rem 0;
+	}
+.about_shikishi .about_shikishi_content .shikishi_txt p span.note{
+	display:block;
+	font-size:0.8rem;
+	margin: 1rem;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt .note_kasuu{
+	font-size:0.8rem;
+	background:#000e1b;
+	padding:1rem;
+	text-align: center;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt .note_allergy{
+	font-size:0.6rem;
+    color: #c80008;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt .note_kasuu .linktoecap{
+    display: block;
+    margin: 1rem auto 0;
+    width: 100%;
+    max-width: 400px;
+    text-decoration: none;
+    color: #034a8a;
+    background-color: #efefef;
+    text-shadow: none;
+    padding: 1rem;
+    box-sizing: border-box;
+	box-shadow: 0 5px 0 0px #666;
+    transform: translateY(-5px);
+    transition: all 0.3s;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt .note_kasuu .linktoecap:hover{
+	box-shadow: 0 0px 0 0px #8c670c;
+	transform: translateY(0px);
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt .bracelet_spec{
+    font-size:0.9rem;
+    max-width:400px;
+    width:100%;
+	margin: 1rem 0;
+	line-height: 1.6;
+	}
+.about_bracelet .about_bracelet_content .bracelet_txt .bracelet_spec tr th{}
+.about_bracelet .about_bracelet_content .bracelet_txt .bracelet_spec tr td:before{content:"：";}
+.about_genmabako .about_genmabako_content .genmabako_txt{
+	font-size: 1.4rem;
+	line-height: 1.6;
+	}
+@media screen and (max-width:426px){.about_genmabako .about_genmabako_content .genmabako_txt{text-align:center;}}
+.about_shikishi .about_shikishi_content .shikishi_pic .note{
+	color:#fff;
+	font-size:0.7rem;
+	padding:1rem;
+	line-height:1.8;
+	}
+.about_shikishi .about_shikishi_content .shikishi_pic .note li{
+	display:flex;	
+	}
+.about_shikishi .about_shikishi_content .shikishi_pic .note li:before{
+	content:"※";
+	}
+.about_genmabako{}
+.about_genmabako h3{
+	font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+	line-height: 1.4;
+	}
+.about_genmabako .about_genmabako_content .genmabako_txt{
+	max-width:500px;
+	width:100%;
+	color:#fff;
+	}
+.about_genmabako .about_genmabako_content .genmabako_pic{
+	max-width:900px;
+	}
+@media screen and (max-width:426px){
+	.about_genmabako .about_genmabako_content .genmabako_pic{
+		margin:0 0 2rem 0;
+		}
+	}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list > li{
+	list-style:none;
+	display:flex;
+	flex-wrap: nowrap;
+	margin: 0 0 2.0rem 0;
+	}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list > li:before{
+	display: block;
+	counter-increment: num_item_list;
+    content: counter(num_item_list)".";
+	}
+@media screen and (max-width:426px){
+	.about_genmabako .about_genmabako_content .genmabako_txt .item_list > li{}
+	.about_genmabako .about_genmabako_content .genmabako_txt .item_list > li:before{}
+	}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list .note{list-style:none;font-size: 0.7rem;}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list .note li{display:flex;}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list .note li:before{content:"※";}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list .spec{
+	font-size:0.9rem;
+	}
+.about_genmabako .about_genmabako_content .genmabako_txt .item_list .spec td:before{
+	content:"：";
+	}
+.about_genmabako .summary_txt{
+	color: #fff;
+    max-width: 1200px;
+    width: 100%;
+    margin:2rem auto 0;
+	text-align: center;
+    font-size: 1.0rem;
+    line-height: 1.4;
+	}
+@media screen and (max-width:1024px){.about_genmabako .summary_txt{font-size:0.8rem;}}
+@media screen and (max-width:426px){.about_genmabako .summary_txt{text-align:left;}}
+.about_genmabako .summary_txt .summary_txt_p1{box-sizing: border-box;margin: 0 0 1rem 0;}
+.about_genmabako .summary_txt .summary_txt_p2{margin:1rem 0 0 0;box-sizing: border-box;color: #eda94a;}
+.soundtrack_cd{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:1rem auto 2rem;
+    justify-content: space-around;
+	}
+.soundtrack_cd .cd_pic{
+	display: flex;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+	}
+.soundtrack_cd .cd_titile{
+	color: #eda94a;
+    font-size: 1.2rem;
+    padding: 1rem 0 0.5rem;
+	text-align: center;
+	}
+.soundtrack_cd .score_list{
+    list-style: none;
+    max-height: 400px;
+	height:100%;
+    /* column-count: 2; */
+    border: 1px solid #fff;
+    padding: 1rem 2rem;
+    counter-reset: num_score_list;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+	background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 4px 1px rgba(255, 255, 255, 0.6);
+	}
+.soundtrack_cd .cd_music_list{
+	max-width: 600px;
+    width: 100%;
+	}
+.soundtrack_cd .score_list > li{
+	display: flex;
+	padding: 0.5rem;
+	}
+.soundtrack_cd .score_list > li:before{
+	display: block;
+	counter-increment: num_score_list;
+    content: counter(num_score_list)".";
+	}
+.soundtrack_cd .score_list > li div{
+    padding-left: 1rem;
+    text-align: center;
+    width: 100%;
+	}
+a.btn_to_top{
+	position:relative;
+	display: block;
+    margin: 0rem auto 2rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    background:#6e0a0e;
+    color: #fff;
+    text-decoration: none;
+    padding: 2rem;
+    box-sizing: border-box;	
+	}
+a.btn_to_top:before{
+	content:"";
+	position:absolute;
+	display:block;
+	width:20px;
+	height:20px;
+    background:#6e0a0e;
+	top:-10px;
+	left:0;
+	right:0;
+	margin:auto;
+	transform: rotate(45deg);
+	}
+/*footer*/
+.spec_area{
+	background-color:#000000;
+	border-bottom:1px solid #efefef;
+	border-top:1px solid #efefef;
+	overflow: auto;
+    height: auto;
+	padding: 4rem 1rem;
+	}
+.spec_area .banner_area .link_officail{
+	display:block;
+	max-width: 1000px;
+    width: 100%;
+    margin:auto;
+	box-shadow: 0 0 10px 0px #888;
+	}
+@media screen and (max-width:427px){.banner_pc{display:none;}}
+@media screen and (min-width:426px){.banner_sp{display:none;}}
+.spec_area .spec_details{
+	margin: 4rem 0 0 1rem;
+	}
+@media screen and (max-width:426px){.spec_area .spec_details{margin: 4rem auto 0rem;}}
+.spec_area .spec_details .spec_details_table{
+	border-collapse: separate;
+    border-spacing: 0.5rem;
+	color: #666;
+	font-size: 0.8rem;
+	max-width: 700px;
+    width: 100%;
+	}
+@media screen and (max-width:320px){.spec_area .spec_details .spec_details_table{text-align: center;line-height: 1.4;}}
+@media screen and (max-width:320px){.spec_area .spec_details .spec_details_table tr td{display:block;width:100%;}}
+.spec_area .spec_details table caption{
+	text-align:left;
+	}
+@media screen and (max-width:320px){.spec_area .spec_details .spec_details_table caption{text-align:center;}}
+.spec_area .spec_details .spec_details_table tr td:nth-child(2):before{
+	content:"：";
+	}
+.spec_area .spec_details .logo_cero_D{
+    display: inline;
+    max-width: 45px;
+    width: 100%;
+    vertical-align:text-top;
+    padding: 0 0 0 0.5rem;
+	}
+.spec_area .notice_hardware_maker{
+	text-align:center;
+	color: #5e5f5f;
+	font-size: 0.6rem;
+	}
+.spec_area .notice_hardware_maker img{
+	display:inline;
+	width:auto;
+	}
+.spec_area .notice_hardware_maker .logo_PlayStation_family,
+.spec_area .notice_hardware_maker .logo_ps4{
+	height:0.6rem;
+	}
