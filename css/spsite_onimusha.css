@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*common*/
 html,body{font-size:16px;font-family:"Sawarabi Mincho",serif;}
 @media screen and (max-width:320px){html,body{font-size:14px;}}
@@ -16,8 +16,6 @@ header,footer{
     margin: auto;
 	}
 header{
-	top:0;
-	position:absolute;
 	z-index: 10;
 	}
 footer{
@@ -140,49 +138,63 @@ h2:after{
 .about_genmabako h2{max-width:600px;}
 /*keyvisual*/
 .keyvisual{
-	display: flex;
+	/*display: flex;
     position: relative;
     max-width: 100%;
     width: 100%;
-    height: 100vh;
+    height: 100vh;*/
     background-image: url(../img/keyvisual.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 .keyvisual .area_abusolute{
-	position:relative;
-	max-width:1920px;
-	width:100%;
+	/*position:relative;
     height:100%;
-	max-height:1080px;
+	max-height:1080px;*/
+	max-width: 1920px;
+    width: 100%;
 	margin:auto;
 	box-sizing: border-box;
 	}
+.keyvisual .down_area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 4rem 0;
+	}
+.keyvisual .down_area .down_side_right{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+	margin: 0 0 0 2rem;
+	}
 .keyvisual .pic_intro_complete{
-	max-width:60%;
+    max-width: 1000px;
     width: 100%;
-    position: absolute;
-    bottom: 5vh;
-    left: 1vw;
-	padding: 1rem;
+    /* bottom: 5vh; */
+    /* left: 1vw; */
+    /* padding: 1rem; */
     box-sizing: border-box;
 	}
 .keyvisual .logotitle_tate{
-	max-width: 25%;
+	max-width: 350px;
     width: 100%;
-    position: absolute;
-    bottom: 5vh;
-    right: 1vw;
-    padding: 0 1rem;
+    /* bottom: 5vh; */
+    /* right: 1vw; */
+    /* padding: 0 1rem; */
     box-sizing: border-box;
 	}
 .keyvisual .catchcopy{
-    /* width: 100%; */
-    /* max-width: 1200px; */
-    position: absolute;
-    top: 5vh;
-    left: 1vw;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    /* top: 5vh; */
+    /* left: 1vw; */
     font-size: 2rem;
     color: #fff;
     line-height: 1.4;
@@ -191,164 +203,102 @@ h2:after{
     box-sizing: border-box;
 	}
 .keyvisual .reserve_nowon_tate{
-    position: absolute;
-    max-width: 10%;
+	max-width: 150px;
     width: 100%;
-    bottom: 2vh;
-    right: 22%;
-    padding: 0 1rem;
+    /* bottom: 2vh; */
+    /* right: 22%; */
+    /* padding: 0 1rem; */
     box-sizing: border-box;
 	}
 .keyvisual .date_onsales_tate{
-	max-width:4%;
+    max-width: 30px;
     width: 100%;
-    position: absolute;
-    bottom: 5vh;
-    right: 30%;
-    margin: auto;
-    padding: 0 1rem;
+    /* bottom: 5vh; */
+    /* right: 30%; */
+    /* margin: auto; */
+    /* padding: 0 1rem; */
     box-sizing: border-box;
-}
+	}
 @media screen and (max-width:1440px){
-	.keyvisual .catchcopy{
-		font-size:1.0rem;
-		}
-	.keyvisual .logotitle_tate{}
-	.keyvisual .pic_intro_complete{max-width: 55%;}
-	.keyvisual .reserve_nowon_tate{}
-	.keyvisual .date_onsales_tate{max-width: 4.5vw;}
+	.keyvisual .catchcopy{}
 	}
 .keyvisual .logotitle_yoko{
-	position: absolute;
-    bottom: 0;
+    /* bottom: 0; */
     margin: auto;
-    left: 0;
-    right: 0;
+    /* left: 0; */
+    /* right: 0; */
     max-width: 400px;
-	box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
 	}
 .keyvisual .date_onsales_yoko{
-	position: absolute;
-    bottom: 16vh;
-    left: 0;
-    right: 0;
     margin: auto;
     max-width: 400px;
     width: 100%;
-	padding: 0 1rem;
     box-sizing: border-box;
 	}
 .keyvisual .reserve_nowon_yoko{
 	max-width: 400px;
-    position: absolute;
-    left: 0;
-    right: 0;
     margin: auto;
-    bottom: 20vh;
 	}
+
 @media screen and (min-width:1025px){
 	.keyvisual .logotitle_yoko{display:none;}
 	.keyvisual .date_onsales_yoko{display:none;}
 	.keyvisual .reserve_nowon_yoko{display:none;}
 	}
-@media screen and (max-width:1024px){
+/*@media screen and (max-width:1024px){
 	.keyvisual .logotitle_tate{display:none;}
 	.keyvisual .date_onsales_tate{display:none;}
 	.keyvisual .reserve_nowon_tate{display:none;}
-	}
-@media screen and (max-width:1280px){
-	.keyvisual .pic_intro_complete{max-width:45%;}
-	.keyvisual .catchcopy{top:10vh;}
-	.keyvisual .logotitle_yoko,.keyvisual .date_onsales_yoko,.keyvisual .reserve_nowon_yoko{max-width:300px;}
-	}
+	}*/
+@media screen and (max-width:1280px){}
 @media screen and (max-width:1024px){
-	.keyvisual .date_onsales{
-		right: 33vw;
-		bottom: 3vh;
-		}
-	.keyvisual .logotitle{
-		max-width:250px;
-	}
-	.keyvisual .pic_intro_complete{
-		left: 0;
-		right: 0;
-		bottom: 30vh;
-		margin: auto;
-		max-width: 650px;
-		width:100%;
-	}
+	.keyvisual .date_onsales{}
+	.keyvisual .logotitle{}
+	.keyvisual .pic_intro_complete{}
 	.keyvisual .catchcopy{
-		font-size:1.6rem;
-		top:0vh;
+		font-size: 1.25rem;
 		text-align: center;
-		left: 0;
-		right: 0;
-		margin: auto;
+		/* margin: auto; */
 		}
 	}
 @media screen and (max-width:768px){
 	.keyvisual .catchcopy{
-		font-size:1.2rem;
-		top:8vh;
+		font-size: 1.25rem;
+		padding: 0 1rem;
 		}
-	.keyvisual .logotitle_yoko{
-		max-width:300px;
+	.keyvisual .reserve_nowon_tate{
+		max-width: 100px;
 		}
-	.keyvisual .reserve_nowon_yoko{
-		max-width:300px;
+	.keyvisual .down_area{
+		flex-wrap:wrap;
 		}
+	.keyvisual .down_area .down_side_right{
+		margin: 2rem;
+		}
+	.keyvisual .logotitle_yoko{}
+	.keyvisual .reserve_nowon_yoko{}
 	}
 @media screen and (max-width:426px){
-	.keyvisual .logotitle_yoko{
-		max-width:200px;
-		}
-	.keyvisual .pic_intro_complete{
-		bottom: 35vh;
-		}
-	.keyvisual .reserve_nowon_yoko{
-		max-width:150px;		
-		bottom:25vh;
-		}
-	.keyvisual .reserve_nowon{
-      max-width: 350px;
-      bottom: 6vh;
-      left: 0vw;
-      right: 0vw;
-      margin: auto;
-	  top:auto;
-		}
-	.keyvisual .date_onsales_yoko {
-		bottom: 20vh;
-		max-width:250px;
-		}
+	.keyvisual .logotitle_yoko{}
+	.keyvisual .pic_intro_complete{}
+	.keyvisual .reserve_nowon_yoko{}
+	.keyvisual .reserve_nowon{}
+	.keyvisual .date_onsales_yoko {}
+	.keyvisual .catchcopy{}
+	}
+@media screen and (max-width:375px){
 	.keyvisual .catchcopy{
-		width: 100%;
-		max-width: 800px;
-		box-sizing: border-box;
-		padding:0 1rem;
-		font-size: 1.0rem;
-		text-align: center;
-		top: 10vh;
+		font-size:0.7rem;
 		}
 	}
-@media screen and (max-width:375px){.keyvisual .catchcopy{font-size:0.7rem;}}
 @media screen and (max-width:320px){
-	.keyvisual .catchcopy{
-		font-size:0.6rem;
-		}
-	.keyvisual .pic_intro_complete {
-		bottom: 40vh;
-	}
-	.keyvisual .reserve_nowon_yoko {
-		bottom: 30vh;
-	}
-	.keyvisual .logotitle{
-		top:7vh;
-		}
-	.keyvisual .logotitle_yoko{
-		max-width: 200px;
-		}
+	.keyvisual .catchcopy{}
+	.keyvisual .pic_intro_complete {}
+	.keyvisual .reserve_nowon_yoko {}
+	.keyvisual .logotitle{}
+	.keyvisual .logotitle_yoko{}
 	}
 /*content*/
 .bg_smoke{
