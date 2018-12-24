@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /*common*/
 html,body{font-size:16px;font-family:"Sawarabi Mincho",serif;}
 @media screen and (max-width:320px){html,body{font-size:14px;}}
